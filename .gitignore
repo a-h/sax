@@ -1,0 +1,4 @@
+generate.xml
+dotnet/bin
+dotnet/obj
+go/go

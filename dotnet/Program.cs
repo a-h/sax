@@ -24,7 +24,6 @@ namespace dotnet
                         case XmlNodeType.Element:
                             if (reader.Name == "House")
                             {
-                                // The Go program decodes the element, but the .NET one doesn't.
                                 houses++;
                             }
                             break;

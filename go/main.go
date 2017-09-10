@@ -3,12 +3,28 @@ package main
 import (
 	"bufio"
 	"encoding/xml"
+	"flag"
 	"fmt"
+	"log"
 	"os"
+	"runtime/pprof"
 )
+
+var profile = flag.Bool("profile", false, "Set to true to enable profiling to cpuprofile.out")
 
 func main() {
 	filename := "generate.xml"
+
+	// Enable profiling.
+	if *profile {
+		f, err := os.Create("cpuprofile.out")
+		if err != nil {
+			log.Fatal(err)
+		}
+		pprof.StartCPUProfile(f)
+		defer pprof.StopCPUProfile()
+	}
+
 	count := countHouses(filename)
 	fmt.Printf("Go: Found %v houses\n", count)
 }

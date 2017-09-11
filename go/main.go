@@ -13,6 +13,8 @@ import (
 var profile = flag.Bool("profile", false, "Set to true to enable profiling to cpuprofile.out")
 
 func main() {
+	flag.Parse()
+
 	filename := "generate.xml"
 
 	// Enable profiling.

@@ -2,3 +2,6 @@ generate.xml
 dotnet/bin
 dotnet/obj
 go/go
+go-xmlparser/go-xmlparser
+cpuprofile.out
+xmlparser-cpuprofile.out
